@@ -39,7 +39,8 @@ public class CooperativaCafe implements Subject {
     }
 
     public void registrarLote(LoteCafe lote) {
-        System.out.println("\nSe registró un nuevo lote en la cooperativa.");
+        System.out.println("registró un nuevo lote en la cooperativa.");
         notifyObservers(lote);
     }
 }
+
