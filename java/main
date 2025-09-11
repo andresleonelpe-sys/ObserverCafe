@@ -1,0 +1,29 @@
+package cafeobserver;
+
+import cafeobserver.core.Cooperativa;
+import cafeobserver.model.Barista;
+import cafeobserver.model.LoteCafe;
+
+public class Main {
+    public static void main(String[] args) {
+        Cooperativa coop = new Cooperativa();
+
+      
+        Barista b1 = new Barista("Carlos", "B001");
+        Barista b2 = new Barista("María", "B002");
+
+      
+        coop.suscribir(b1);
+        coop.suscribir(b2);
+
+        
+        LoteCafe lote1 = new LoteCafe("Geisha", "Notas florales y miel", "Huila", 1800, "Productor Juan", 30);
+        coop.registrarNuevoLote(lote1);
+
+        
+        coop.eliminar(b2);
+
+        LoteCafe lote2 = new LoteCafe("Bourbón Rosado", "Notas a frutas rojas", "Quindío", 1600, "Productor Ana", 45);
+        coop.registrarNuevoLote(lote2);
+    }
+}
