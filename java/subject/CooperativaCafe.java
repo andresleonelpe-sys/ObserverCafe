@@ -8,6 +8,38 @@ package subject;
  *
  * @author andre
  */
-public class CooperativaCafe {
-    
+import cafeobserver.model.LoteCafe;
+import cafeobserver.observer.Observer;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CooperativaCafe implements Subject {
+    private List<Observer> observadores;
+
+    public CooperativaCafe() {
+        this.observadores = new ArrayList<>();
+    }
+
+    @Override
+    public void addObserver(Observer o) {
+        observadores.add(o);
+    }
+
+    @Override
+    public void removeObserver(Observer o) {
+        observadores.remove(o);
+    }
+
+    @Override
+    public void notifyObservers(LoteCafe lote) {
+        for (Observer o : observadores) {
+            o.update(lote);
+        }
+    }
+
+    public void registrarLote(LoteCafe lote) {
+        System.out.println("\nSe registró un nuevo lote en la cooperativa.");
+        notifyObservers(lote);
+    }
 }
