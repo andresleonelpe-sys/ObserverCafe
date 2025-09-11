@@ -4,10 +4,11 @@
  */
 package subject;
 
-/**
- *
- * @author andre
- */
-public class Subject {
-    
+import cafeobserver.model.LoteCafe;
+import cafeobserver.observer.Observer;
+
+public interface Subject {
+    void addObserver(Observer o);
+    void removeObserver(Observer o);
+    void notifyObservers(LoteCafe lote);
 }
