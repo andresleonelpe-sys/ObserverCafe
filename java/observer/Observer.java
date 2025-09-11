@@ -8,9 +8,8 @@ package observer;
  *
  * @author andre
  */
-public class Observer {
+import cafeobserver.model.LoteCafe;
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+public interface Observer {
+    void update(LoteCafe lote);
 }
